@@ -6,16 +6,26 @@
 //
 
 import CoreData
+import SwiftUI
 
-struct PersistenceController {
+class PersistenceController : NSObject,ObservableObject {
+    
+    @Published var photoItems: [Photo] = [Photo]()
+
     static let shared = PersistenceController()
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+        for photo in 0..<10 {
+            let newItem = CorePhoto(context: viewContext)
+            newItem.id = Int64(12342423)
+            newItem.sol = Int64(12342423)
+            newItem.camera_id = Int64(12342423)
+            newItem.camera_full_name = "My camera"
+            newItem.earth_date = "2014-05-13"
+            newItem.rover_id = Int64(12342423)
+
         }
         do {
             try viewContext.save()

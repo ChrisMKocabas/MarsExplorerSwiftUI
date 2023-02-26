@@ -13,7 +13,7 @@ struct MarsExplorerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FavouritePhotosView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

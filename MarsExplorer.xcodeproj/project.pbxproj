@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		047975B129A58F0300DA9AB6 /* MarsExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975B029A58F0300DA9AB6 /* MarsExplorerApp.swift */; };
-		047975B329A58F0300DA9AB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975B229A58F0300DA9AB6 /* ContentView.swift */; };
+		047975B329A58F0300DA9AB6 /* FavouritePhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975B229A58F0300DA9AB6 /* FavouritePhotosView.swift */; };
 		047975B529A58F0300DA9AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047975B429A58F0300DA9AB6 /* Assets.xcassets */; };
 		047975B829A58F0300DA9AB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047975B729A58F0300DA9AB6 /* Preview Assets.xcassets */; };
 		047975BA29A58F0300DA9AB6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975B929A58F0300DA9AB6 /* Persistence.swift */; };
@@ -16,6 +16,10 @@
 		047975C729A58F0400DA9AB6 /* MarsExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975C629A58F0400DA9AB6 /* MarsExplorerTests.swift */; };
 		047975D129A58F0400DA9AB6 /* MarsExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975D029A58F0400DA9AB6 /* MarsExplorerUITests.swift */; };
 		047975D329A58F0400DA9AB6 /* MarsExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975D229A58F0400DA9AB6 /* MarsExplorerUITestsLaunchTests.swift */; };
+		047975E029A5D61B00DA9AB6 /* PhotosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975DF29A5D61B00DA9AB6 /* PhotosResponse.swift */; };
+		047975E229A5D8D200DA9AB6 /* MarsImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975E129A5D8D200DA9AB6 /* MarsImagesView.swift */; };
+		047975E429A5D94A00DA9AB6 /* ImageInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975E329A5D94A00DA9AB6 /* ImageInspectorView.swift */; };
+		04A05DC029A802B00000FA71 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A05DBF29A802B00000FA71 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,7 @@
 /* Begin PBXFileReference section */
 		047975AD29A58F0300DA9AB6 /* MarsExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047975B029A58F0300DA9AB6 /* MarsExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsExplorerApp.swift; sourceTree = "<group>"; };
-		047975B229A58F0300DA9AB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		047975B229A58F0300DA9AB6 /* FavouritePhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePhotosView.swift; sourceTree = "<group>"; };
 		047975B429A58F0300DA9AB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		047975B729A58F0300DA9AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		047975B929A58F0300DA9AB6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -48,6 +52,11 @@
 		047975CC29A58F0400DA9AB6 /* MarsExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarsExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		047975D029A58F0400DA9AB6 /* MarsExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsExplorerUITests.swift; sourceTree = "<group>"; };
 		047975D229A58F0400DA9AB6 /* MarsExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		047975DF29A5D61B00DA9AB6 /* PhotosResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosResponse.swift; sourceTree = "<group>"; };
+		047975E129A5D8D200DA9AB6 /* MarsImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsImagesView.swift; sourceTree = "<group>"; };
+		047975E329A5D94A00DA9AB6 /* ImageInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInspectorView.swift; sourceTree = "<group>"; };
+		04A05DBF29A802B00000FA71 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		04A05DC129A822110000FA71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +107,12 @@
 		047975AF29A58F0300DA9AB6 /* MarsExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				04A05DC129A822110000FA71 /* Info.plist */,
+				04FA558829A8706B00A038A6 /* Views */,
+				047975E729A6DDA000DA9AB6 /* Services */,
 				047975B029A58F0300DA9AB6 /* MarsExplorerApp.swift */,
-				047975B229A58F0300DA9AB6 /* ContentView.swift */,
+				04FA558929A8709600A038A6 /* Models */,
 				047975B429A58F0300DA9AB6 /* Assets.xcassets */,
-				047975B929A58F0300DA9AB6 /* Persistence.swift */,
 				047975BB29A58F0300DA9AB6 /* MarsExplorer.xcdatamodeld */,
 				047975B629A58F0300DA9AB6 /* Preview Content */,
 			);
@@ -131,6 +142,33 @@
 				047975D229A58F0400DA9AB6 /* MarsExplorerUITestsLaunchTests.swift */,
 			);
 			path = MarsExplorerUITests;
+			sourceTree = "<group>";
+		};
+		047975E729A6DDA000DA9AB6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				047975B929A58F0300DA9AB6 /* Persistence.swift */,
+				04A05DBF29A802B00000FA71 /* APIManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		04FA558829A8706B00A038A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				047975B229A58F0300DA9AB6 /* FavouritePhotosView.swift */,
+				047975E329A5D94A00DA9AB6 /* ImageInspectorView.swift */,
+				047975E129A5D8D200DA9AB6 /* MarsImagesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04FA558929A8709600A038A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				047975DF29A5D61B00DA9AB6 /* PhotosResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +302,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				047975BA29A58F0300DA9AB6 /* Persistence.swift in Sources */,
+				04A05DC029A802B00000FA71 /* APIManager.swift in Sources */,
 				047975BD29A58F0300DA9AB6 /* MarsExplorer.xcdatamodeld in Sources */,
-				047975B329A58F0300DA9AB6 /* ContentView.swift in Sources */,
+				047975E429A5D94A00DA9AB6 /* ImageInspectorView.swift in Sources */,
+				047975B329A58F0300DA9AB6 /* FavouritePhotosView.swift in Sources */,
 				047975B129A58F0300DA9AB6 /* MarsExplorerApp.swift in Sources */,
+				047975E029A5D61B00DA9AB6 /* PhotosResponse.swift in Sources */,
+				047975E229A5D8D200DA9AB6 /* MarsImagesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +470,7 @@
 				DEVELOPMENT_TEAM = 9N86628KP4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = MarsExplorer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -457,7 +499,7 @@
 				DEVELOPMENT_TEAM = 9N86628KP4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = MarsExplorer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
