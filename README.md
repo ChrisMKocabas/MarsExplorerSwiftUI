@@ -3,13 +3,13 @@
 ### NASA Rover Photos is an iOS application developed using SwiftUI framework that allows users to view and save photos taken by Mars rovers.
 
 ## Tech Stack
-The application is developed using the following tech stack:
+The application uses the following technologies and design patterns:
 
-- Swift 5
-- SwiftUI
-- URLSession for networking
-- CoreData for data persistence
-
+- SwiftUI framework for the UI
+- CoreData framework for data persistence
+- Firebase Authentication for user authentication (in progress)
+- OpenAPI for fetching data from the NASA Mars Rover Photos API
+- MVVM design pattern for separation of concerns
 
 
 <p float="left">
