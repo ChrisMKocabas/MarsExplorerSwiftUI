@@ -10,18 +10,26 @@ SwiftUI
 URLSession for networking
 CoreData for data persistence
 
+
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/75855099/222632181-bf9adbe9-c78d-4697-8deb-479fc3bba23a.png" width="300" />
+  <img src="https://user-images.githubusercontent.com/75855099/222632214-bf23d7f0-2ac1-48de-94ec-20f1ede5b5c9.png" width="300" /> 
+  <img src="https://user-images.githubusercontent.com/75855099/222632227-17b21d19-df4d-4112-a174-49266a32f361.png" width="300" />
+</p>
+
+
+
 ## Features
 NASA Rover Photos offers the following features:
-<img src="https://user-images.githubusercontent.com/75855099/222632181-bf9adbe9-c78d-4697-8deb-479fc3bba23a.png" alt="Simulator Screen Shot - iPhone 14 Pro - 2023-03-02 at 20 54 26" width="300">
 
 
 - Browse Photos by Rover
 Users can browse through photos taken by different Mars rovers. The available rovers are Curiosity, Opportunity, and Spirit. Users can select a rover and view the latest photos taken by that rover.
-![Simulator Screen Shot - iPhone 14 Pro - 2023-03-02 at 20 53 58](https://user-images.githubusercontent.com/75855099/222632214-bf23d7f0-2ac1-48de-94ec-20f1ede5b5c9.png)
+
 
 - View Photo Details
 Users can tap on any photo to view its details, including the date it was taken, the rover that captured it, and a larger image.
-![Simulator Screen Shot - iPhone 14 Pro - 2023-03-02 at 20 54 56](https://user-images.githubusercontent.com/75855099/222632227-17b21d19-df4d-4112-a174-49266a32f361.png)
+
 
 - Save Favourites
 Users can save their favourite photos to their device using CoreData. They can also filter their favourites by rover and view individual photos in a separate view with detailed information.
