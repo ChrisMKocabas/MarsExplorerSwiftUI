@@ -12,7 +12,7 @@ CoreData for data persistence
 
 ## Features
 NASA Rover Photos offers the following features:
-![Simulator Screen Shot - iPhone 14 Pro - 2023-03-02 at 20 54 26](https://user-images.githubusercontent.com/75855099/222632181-bf9adbe9-c78d-4697-8deb-479fc3bba23a.png | width=200))
+![Simulator Screen Shot - iPhone 14 Pro - 2023-03-02 at 20 54 26](https://user-images.githubusercontent.com/75855099/222632181-bf9adbe9-c78d-4697-8deb-479fc3bba23a.png | width=200)
 
 - Browse Photos by Rover
 Users can browse through photos taken by different Mars rovers. The available rovers are Curiosity, Opportunity, and Spirit. Users can select a rover and view the latest photos taken by that rover.
