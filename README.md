@@ -5,9 +5,10 @@
 ## Tech Stack
 The application is developed using the following tech stack:
 
-Swift 5
-SwiftUI
-URLSession for networking
+- Swift 5
+- SwiftUI
+- URLSession for networking
+
 CoreData for data persistence
 
 
