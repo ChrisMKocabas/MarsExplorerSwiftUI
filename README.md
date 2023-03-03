@@ -8,8 +8,8 @@ The application is developed using the following tech stack:
 - Swift 5
 - SwiftUI
 - URLSession for networking
+- CoreData for data persistence
 
-CoreData for data persistence
 
 
 <p float="left">
