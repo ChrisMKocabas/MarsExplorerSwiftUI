@@ -107,7 +107,7 @@ struct FavouritePhotosView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { photos[$0] }.forEach(viewContext.delete)
+            offsets.map { filteredPhotos[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()

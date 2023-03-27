@@ -24,21 +24,6 @@ struct MarsImagesView: View {
     @State var selectedImage = ""
     @State var numberOfImages = "Number of images: 0"
     
-    func refreshImage() async -> Void {
-            do {
-                try await apiManager.fetchPhotos()
-                 if (apiManager.photosResponse.photos.count > 0)
-                {selectedImage = apiManager.photosResponse.photos[0].img_src
-                 numberOfImages = "Number of images: \(apiManager.photosResponse.photos.count)"
-                 }
-                else {
-                    selectedImage = "........"
-                    numberOfImages = "Number of images: 0"
-                }
-            } catch {
-                
-            }
-    }
 
     var body: some View {
   
@@ -75,7 +60,7 @@ struct MarsImagesView: View {
                 Picker("Pick a rover", selection: $apiManager.selectedRover.projectedValue) { // 3
                     
                     ForEach($apiManager.roverList.projectedValue, id: \.self) { item in // 4
-                        Text("\(item.wrappedValue)") // 5
+                        Text("\(item.wrappedValue.capitalized)") // 5
                     }
                 }.pickerStyle(SegmentedPickerStyle()).padding(.horizontal,20).padding( .vertical, 20)
                     .onChange(of: $apiManager.selectedRover.wrappedValue) { newValue in
@@ -109,11 +94,7 @@ struct MarsImagesView: View {
                 }
                 .pickerStyle(WheelPickerStyle())
                 .frame(height: 150)
-                .onAppear{
-                    Task {
-                        await refreshImage()
-                    }
-                }
+ 
                 
                 Spacer()
                 
@@ -143,6 +124,22 @@ struct MarsImagesView: View {
         
 
         
+    }
+    
+    func refreshImage() async -> Void {
+            do {
+                try await apiManager.fetchPhotos()
+                 if (apiManager.photosResponse.photos.count > 0)
+                {selectedImage = apiManager.photosResponse.photos[0].img_src
+                 numberOfImages = "Number of images: \(apiManager.photosResponse.photos.count)"
+                 }
+                else {
+                    selectedImage = "........"
+                    numberOfImages = "Number of images: 0"
+                }
+            } catch {
+                
+            }
     }
     
     private func addItem() {
@@ -196,35 +193,4 @@ struct MarsImagesView_Previews: PreviewProvider {
     }
 }
 
-
-//    .task {
-//        await loadData(selectedRover: selectedRover.rawValue, selectedDate: parseDateString(dateInput: selectedDate) )
-
-
-//
-//    func loadData(selectedRover: String, selectedDate : String) async {
-//        guard let urlObj = URL(string: "\(Constants.baseURL)/\(selectedRover)/photos?api_key=\(Constants.API_KEY)&earth_date=\(selectedDate)")
-//         else {
-//            print("Invalid URL")
-//            return}
-//
-//        do {
-//            let (data, _) = try await URLSession.shared.data(from:urlObj)
-//            if let decodedResponse = try?JSONDecoder().decode(PhotosResponse.self, from: data) {
-//                photosResponse.photos = decodedResponse.photos
-//                print(photosResponse.photos)
-//            }
-//        } catch {
-//
-//
-//        }
-
-
-
-//    func parseDateString(dateInput: Date)  -> String {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd"
-//        return dateFormatter.string(from: dateInput)
-//
-//    }
 

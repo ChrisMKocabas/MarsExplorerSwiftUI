@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04275A9729D1128300880EE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04275A9629D1128300880EE6 /* GoogleService-Info.plist */; };
+		04275A9A29D1143D00880EE6 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04275A9929D1143D00880EE6 /* FirebaseAnalyticsSwift */; };
+		04275A9C29D1143D00880EE6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04275A9B29D1143D00880EE6 /* FirebaseAuth */; };
+		04275A9E29D1143D00880EE6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 04275A9D29D1143D00880EE6 /* FirebaseFirestore */; };
+		04275AA029D1143D00880EE6 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04275A9F29D1143D00880EE6 /* FirebaseFirestoreSwift */; };
+		04275AA229D1143D00880EE6 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 04275AA129D1143D00880EE6 /* FirebaseFunctions */; };
+		04275AA429D1143D00880EE6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 04275AA329D1143D00880EE6 /* FirebaseStorage */; };
 		047975B129A58F0300DA9AB6 /* MarsExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975B029A58F0300DA9AB6 /* MarsExplorerApp.swift */; };
 		047975B329A58F0300DA9AB6 /* FavouritePhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975B229A58F0300DA9AB6 /* FavouritePhotosView.swift */; };
 		047975B529A58F0300DA9AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047975B429A58F0300DA9AB6 /* Assets.xcassets */; };
@@ -20,6 +27,12 @@
 		047975E229A5D8D200DA9AB6 /* MarsImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975E129A5D8D200DA9AB6 /* MarsImagesView.swift */; };
 		047975E429A5D94A00DA9AB6 /* ImageInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975E329A5D94A00DA9AB6 /* ImageInspectorView.swift */; };
 		04A05DC029A802B00000FA71 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A05DBF29A802B00000FA71 /* APIManager.swift */; };
+		04F513EA29B1888200AE0EFD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F513E929B1888200AE0EFD /* LoginView.swift */; };
+		04F513EC29B188CC00AE0EFD /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F513EB29B188CC00AE0EFD /* AuthenticationViewModel.swift */; };
+		04F513EE29B188F400AE0EFD /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F513ED29B188F400AE0EFD /* SignupView.swift */; };
+		04F513F029B1891B00AE0EFD /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F513EF29B1891B00AE0EFD /* AuthenticatedView.swift */; };
+		04F513F229B189D100AE0EFD /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F513F129B189D100AE0EFD /* AuthenticationView.swift */; };
+		04F513F429B189E800AE0EFD /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F513F329B189E800AE0EFD /* UserProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04275A9629D1128300880EE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		047975AD29A58F0300DA9AB6 /* MarsExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047975B029A58F0300DA9AB6 /* MarsExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsExplorerApp.swift; sourceTree = "<group>"; };
 		047975B229A58F0300DA9AB6 /* FavouritePhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePhotosView.swift; sourceTree = "<group>"; };
@@ -57,6 +71,12 @@
 		047975E329A5D94A00DA9AB6 /* ImageInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInspectorView.swift; sourceTree = "<group>"; };
 		04A05DBF29A802B00000FA71 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		04A05DC129A822110000FA71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		04F513E929B1888200AE0EFD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		04F513EB29B188CC00AE0EFD /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		04F513ED29B188F400AE0EFD /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		04F513EF29B1891B00AE0EFD /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
+		04F513F129B189D100AE0EFD /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		04F513F329B189E800AE0EFD /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +84,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04275A9A29D1143D00880EE6 /* FirebaseAnalyticsSwift in Frameworks */,
+				04275A9C29D1143D00880EE6 /* FirebaseAuth in Frameworks */,
+				04275AA229D1143D00880EE6 /* FirebaseFunctions in Frameworks */,
+				04275A9E29D1143D00880EE6 /* FirebaseFirestore in Frameworks */,
+				04275AA029D1143D00880EE6 /* FirebaseFirestoreSwift in Frameworks */,
+				04275AA429D1143D00880EE6 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,12 +133,14 @@
 		047975AF29A58F0300DA9AB6 /* MarsExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				04F513E829B185C700AE0EFD /* Auth */,
 				04A05DC129A822110000FA71 /* Info.plist */,
 				04FA558829A8706B00A038A6 /* Views */,
 				047975E729A6DDA000DA9AB6 /* Services */,
 				047975B029A58F0300DA9AB6 /* MarsExplorerApp.swift */,
 				04FA558929A8709600A038A6 /* Models */,
 				047975B429A58F0300DA9AB6 /* Assets.xcassets */,
+				04275A9629D1128300880EE6 /* GoogleService-Info.plist */,
 				047975BB29A58F0300DA9AB6 /* MarsExplorer.xcdatamodeld */,
 				047975B629A58F0300DA9AB6 /* Preview Content */,
 			);
@@ -153,6 +181,19 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		04F513E829B185C700AE0EFD /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				04F513E929B1888200AE0EFD /* LoginView.swift */,
+				04F513F129B189D100AE0EFD /* AuthenticationView.swift */,
+				04F513EF29B1891B00AE0EFD /* AuthenticatedView.swift */,
+				04F513EB29B188CC00AE0EFD /* AuthenticationViewModel.swift */,
+				04F513ED29B188F400AE0EFD /* SignupView.swift */,
+				04F513F329B189E800AE0EFD /* UserProfileView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		04FA558829A8706B00A038A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +228,14 @@
 			dependencies = (
 			);
 			name = MarsExplorer;
+			packageProductDependencies = (
+				04275A9929D1143D00880EE6 /* FirebaseAnalyticsSwift */,
+				04275A9B29D1143D00880EE6 /* FirebaseAuth */,
+				04275A9D29D1143D00880EE6 /* FirebaseFirestore */,
+				04275A9F29D1143D00880EE6 /* FirebaseFirestoreSwift */,
+				04275AA129D1143D00880EE6 /* FirebaseFunctions */,
+				04275AA329D1143D00880EE6 /* FirebaseStorage */,
+			);
 			productName = MarsExplorer;
 			productReference = 047975AD29A58F0300DA9AB6 /* MarsExplorer.app */;
 			productType = "com.apple.product-type.application";
@@ -259,6 +308,9 @@
 				Base,
 			);
 			mainGroup = 047975A429A58F0300DA9AB6;
+			packageReferences = (
+				04275A9829D1143D00880EE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 047975AE29A58F0300DA9AB6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -277,6 +329,7 @@
 			files = (
 				047975B829A58F0300DA9AB6 /* Preview Assets.xcassets in Resources */,
 				047975B529A58F0300DA9AB6 /* Assets.xcassets in Resources */,
+				04275A9729D1128300880EE6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,11 +356,17 @@
 			files = (
 				047975BA29A58F0300DA9AB6 /* Persistence.swift in Sources */,
 				04A05DC029A802B00000FA71 /* APIManager.swift in Sources */,
+				04F513F029B1891B00AE0EFD /* AuthenticatedView.swift in Sources */,
 				047975BD29A58F0300DA9AB6 /* MarsExplorer.xcdatamodeld in Sources */,
+				04F513F229B189D100AE0EFD /* AuthenticationView.swift in Sources */,
+				04F513EA29B1888200AE0EFD /* LoginView.swift in Sources */,
 				047975E429A5D94A00DA9AB6 /* ImageInspectorView.swift in Sources */,
+				04F513F429B189E800AE0EFD /* UserProfileView.swift in Sources */,
 				047975B329A58F0300DA9AB6 /* FavouritePhotosView.swift in Sources */,
+				04F513EC29B188CC00AE0EFD /* AuthenticationViewModel.swift in Sources */,
 				047975B129A58F0300DA9AB6 /* MarsExplorerApp.swift in Sources */,
 				047975E029A5D61B00DA9AB6 /* PhotosResponse.swift in Sources */,
+				04F513EE29B188F400AE0EFD /* SignupView.swift in Sources */,
 				047975E229A5D8D200DA9AB6 /* MarsImagesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,6 +692,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04275A9829D1143D00880EE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04275A9929D1143D00880EE6 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04275A9829D1143D00880EE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		04275A9B29D1143D00880EE6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04275A9829D1143D00880EE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		04275A9D29D1143D00880EE6 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04275A9829D1143D00880EE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		04275A9F29D1143D00880EE6 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04275A9829D1143D00880EE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		04275AA129D1143D00880EE6 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04275A9829D1143D00880EE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		04275AA329D1143D00880EE6 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04275A9829D1143D00880EE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		047975BB29A58F0300DA9AB6 /* MarsExplorer.xcdatamodeld */ = {

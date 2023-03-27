@@ -20,7 +20,6 @@ class APIManager: ObservableObject {
     @Published var roverList = ["spirit", "curiosity", "opportunity"]
     @Published var selectedRover: String = "curiosity"
     @Published var selectedDate: Date = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
-    @Published var displayImageURL: String = " "
     
     
     func fetchPhotos() async throws {
