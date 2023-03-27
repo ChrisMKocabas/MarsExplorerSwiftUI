@@ -19,7 +19,7 @@ enum AuthenticationState {
 
 enum AuthenticationFlow {
   case login
-  case signUp
+  case signUp 
 }
 
 @MainActor
