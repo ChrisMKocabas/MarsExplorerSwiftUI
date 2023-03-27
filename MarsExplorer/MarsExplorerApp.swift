@@ -30,7 +30,7 @@ struct MarsExplorerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView { 
+            NavigationView {
                 AuthenticatedView {
                     FavouritePhotosView()
                         .environment(\.managedObjectContext, persistenceController.container.viewContext)
