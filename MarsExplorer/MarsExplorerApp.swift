@@ -19,7 +19,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   }
 }
 
-@main 
+@main
 struct MarsExplorerApp: App {
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
@@ -30,7 +30,7 @@ struct MarsExplorerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+            NavigationView { 
                 AuthenticatedView {
                     FavouritePhotosView()
                         .environment(\.managedObjectContext, persistenceController.container.viewContext)
