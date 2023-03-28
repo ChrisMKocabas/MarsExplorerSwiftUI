@@ -35,6 +35,7 @@ struct Photo:Identifiable,Codable {
     var img_src : String
     var earth_date : String
     var rover : Rover
+    var download_url:String?
 }
 
 

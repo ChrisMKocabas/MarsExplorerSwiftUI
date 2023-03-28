@@ -23,6 +23,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct MarsExplorerApp: App {
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var firestoreManager = FirestoreManager()
     
     let persistenceController = PersistenceController.shared
     // create an instance of AuthenticationViewModel and pass it as an environment object
@@ -34,6 +35,8 @@ struct MarsExplorerApp: App {
                 AuthenticatedView {
                     FavouritePhotosView()
                         .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                        .environmentObject(AuthenticationViewModel())
+                        .environmentObject(firestoreManager)
                 }
             }
         }

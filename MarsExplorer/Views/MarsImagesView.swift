@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseCore
+import FirebaseAuth
+import FirebaseStorage
 
 struct MarsImagesView: View {
     
+    @EnvironmentObject var viewModel: AuthenticationViewModel
+    @EnvironmentObject var firestoreManager: FirestoreManager
     @ObservedObject var apiManager:APIManager
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
@@ -110,7 +116,11 @@ struct MarsImagesView: View {
                        )
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: addItem) {
+                        Button(action: {
+                            Task {
+                                await addItem()
+                            }
+                        }) {
                             Text("Save")
                         }
                     }
@@ -119,6 +129,7 @@ struct MarsImagesView: View {
         }.onAppear() {
             Task {
                 await refreshImage()
+                firestoreManager.fetchUserPhotos()
             }
         }
         
@@ -142,33 +153,85 @@ struct MarsImagesView: View {
             }
     }
     
-    private func addItem() {
+    private func addItem() async {
         if selectedImage != "........" {
-            withAnimation {
-                let newPhoto:CorePhoto = CorePhoto(context: viewContext)
-                newPhoto.id = Int64(apiManager.photosResponse.photos[0].id)
-                newPhoto.sol = Int64(apiManager.photosResponse.photos[0].sol)
-                newPhoto.img_src = apiManager.photosResponse.photos[0].img_src
-                newPhoto.earth_date = apiManager.photosResponse.photos[0].earth_date
-                newPhoto.rover_id = Int64(apiManager.photosResponse.photos[0].rover.id)
-                newPhoto.rover_landing_date = apiManager.photosResponse.photos[0].rover.landing_date
-                newPhoto.rover_launch_date = apiManager.photosResponse.photos[0].rover.launch_date
-                newPhoto.rover_name = apiManager.photosResponse.photos[0].rover.name
-                newPhoto.rover_status = apiManager.photosResponse.photos[0].rover.status
-                newPhoto.camera_id = Int64(apiManager.photosResponse.photos[0].camera.id)
-                newPhoto.camera_full_name = apiManager.photosResponse.photos[0].camera.full_name
-                newPhoto.camera_name = apiManager.photosResponse.photos[0].camera.name
-                do {
-                    try viewContext.save()
-                    displayMessage(message: "Added to favourites!")
-                } catch {
-                    // Replace this implementation with code to handle the error appropriately.
-                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    let nsError = error as NSError
-                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            let photo:Photo = apiManager.photosResponse.photos[0]
+            saveToCoreData(photo: photo)
+            let user = viewModel.user
+            print(user!.uid)
+            
+            let url = URL(string: photo.img_src)!
+
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                guard let data = data, error == nil else {
+                    print("Error downloading image: \(error?.localizedDescription ?? "unknown error")")
+                    return
                 }
+                do {
+                    let photoData = Data(data)
+                    
+                    let db = Firestore.firestore()
+                    
+                    
+                    // Get a reference to the user's document
+                    let userDocRef = db.collection("users").document(user?.uid ?? "")
+                    
+                    // Create a new document with a custom ID in the "photos" collection that includes the user ID
+                    let newPhotoDocRef = userDocRef.collection("photos").document("\(photo.id)")
+                    
+                    // Create a reference to the Firebase Storage bucket using a custom path that includes the user ID and the photo ID
+                    let photoRef = Storage.storage().reference(withPath: "images/\(user!.uid.description)/photos/\(photo.id).jpg")
+                
+                    // Upload the photo data to Firebase Storage
+                    photoRef.putData(photoData, metadata: nil) { (metadata, error) in
+                        if let error = error {
+                            print("Error uploading photo to Firebase Storage: \(error.localizedDescription)")
+                        } else {
+                            // Get the download URL of the uploaded photo
+                            photoRef.downloadURL { (url, error) in
+                                if let error = error {
+                                    print("Error getting download URL: \(error.localizedDescription)")
+                                } else if let url = url {
+                                    // Save the photo details and download URL to Firestore
+                                    newPhotoDocRef.setData([
+                                        "id": photo.id,
+                                        "sol": photo.sol,
+                                        "img_src": photo.img_src,
+                                        "earth_date": photo.earth_date,
+                                        "rover": [
+                                            "id": photo.rover.id,
+                                            "name": photo.rover.name,
+                                            "landing_date": photo.rover.landing_date,
+                                            "launch_date": photo.rover.launch_date,
+                                            "status": photo.rover.status
+                                        ],
+                                        "camera": [
+                                            "id": photo.camera.id,
+                                            "name": photo.camera.name,
+                                            "rover_id": photo.camera.rover_id,
+                                            "full_name": photo.camera.full_name
+                                        ],
+                                        "download_url": url.absoluteString
+                                    ])
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                
+            }.resume()
+            
+            withAnimation {
+                displayMessage(message: "Added to favourites!")
             }
-        } else {
+          
+          
+              
+   
+                
+            
+    } else {
             displayMessage(message: "Please select an image first!")
         }
     }
@@ -177,6 +240,28 @@ struct MarsImagesView: View {
         self.numberOfImages = message
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.numberOfImages = "Number of images: \(apiManager.photosResponse.photos.count)"
+        }
+    }
+    
+    func saveToCoreData(photo:Photo){
+        let newPhoto:CorePhoto = CorePhoto(context: viewContext)
+        newPhoto.id = Int64(photo.id)
+        newPhoto.sol = Int64(photo.sol)
+        newPhoto.img_src = photo.img_src
+        newPhoto.earth_date = photo.earth_date
+        newPhoto.rover_id = Int64(photo.rover.id)
+        newPhoto.rover_landing_date = photo.rover.landing_date
+        newPhoto.rover_launch_date = photo.rover.launch_date
+        newPhoto.rover_name = photo.rover.name
+        newPhoto.rover_status = photo.rover.status
+        newPhoto.camera_id = Int64(photo.camera.id)
+        newPhoto.camera_full_name = photo.camera.full_name
+        newPhoto.camera_name = photo.camera.name
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
         

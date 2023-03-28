@@ -7,6 +7,10 @@
 
 import SwiftUI
 import CoreData
+import Firebase
+import FirebaseFirestore
+import FirebaseStorage
+
 
 struct FavouritePhotosView: View {
     @Environment(\.managedObjectContext) private var viewContext

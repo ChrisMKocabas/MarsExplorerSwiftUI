@@ -14,6 +14,7 @@
 		04275AA029D1143D00880EE6 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04275A9F29D1143D00880EE6 /* FirebaseFirestoreSwift */; };
 		04275AA229D1143D00880EE6 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 04275AA129D1143D00880EE6 /* FirebaseFunctions */; };
 		04275AA429D1143D00880EE6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 04275AA329D1143D00880EE6 /* FirebaseStorage */; };
+		046814FD29D24C5C00457E1E /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046814FC29D24C5C00457E1E /* FireStoreManager.swift */; };
 		047975B129A58F0300DA9AB6 /* MarsExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975B029A58F0300DA9AB6 /* MarsExplorerApp.swift */; };
 		047975B329A58F0300DA9AB6 /* FavouritePhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975B229A58F0300DA9AB6 /* FavouritePhotosView.swift */; };
 		047975B529A58F0300DA9AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047975B429A58F0300DA9AB6 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		04275A9629D1128300880EE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		046814FC29D24C5C00457E1E /* FireStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FireStoreManager.swift; path = MarsExplorer/Services/FireStoreManager.swift; sourceTree = SOURCE_ROOT; };
 		047975AD29A58F0300DA9AB6 /* MarsExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047975B029A58F0300DA9AB6 /* MarsExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsExplorerApp.swift; sourceTree = "<group>"; };
 		047975B229A58F0300DA9AB6 /* FavouritePhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePhotosView.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				047975B229A58F0300DA9AB6 /* FavouritePhotosView.swift */,
+				046814FC29D24C5C00457E1E /* FireStoreManager.swift */,
 				047975E329A5D94A00DA9AB6 /* ImageInspectorView.swift */,
 				047975E129A5D8D200DA9AB6 /* MarsImagesView.swift */,
 			);
@@ -357,6 +360,7 @@
 				047975BA29A58F0300DA9AB6 /* Persistence.swift in Sources */,
 				04A05DC029A802B00000FA71 /* APIManager.swift in Sources */,
 				04F513F029B1891B00AE0EFD /* AuthenticatedView.swift in Sources */,
+				046814FD29D24C5C00457E1E /* FireStoreManager.swift in Sources */,
 				047975BD29A58F0300DA9AB6 /* MarsExplorer.xcdatamodeld in Sources */,
 				04F513F229B189D100AE0EFD /* AuthenticationView.swift in Sources */,
 				04F513EA29B1888200AE0EFD /* LoginView.swift in Sources */,

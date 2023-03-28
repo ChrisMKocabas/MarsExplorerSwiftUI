@@ -104,7 +104,14 @@ extension AuthenticationViewModel {
   func signUpWithEmailPassword() async -> Bool {
     authenticationState = .authenticating
     do  {
-      try await Auth.auth().createUser(withEmail: email, password: password)
+        let newUser = try await Auth.auth().createUser(withEmail: email, password: password)
+        
+        let userUid = newUser.user.uid
+        let db = Firestore.firestore()
+        try await db.collection("users").document(userUid.description).setData(["userCredentials" : userUid])
+
+        
+        
       return true
     }
     catch {
@@ -127,7 +134,11 @@ extension AuthenticationViewModel {
 
   func deleteAccount() async -> Bool {
     do {
-      try await user?.delete()
+        let userUid = user?.uid.description
+        let db = Firestore.firestore()
+        try await db.collection("users").document(userUid!).delete()
+        try await user?.delete()
+        
       return true
     }
     catch {
